@@ -17,26 +17,58 @@
   */
 
 function createBookList(books) {
-  // your code goes in here, return the ul element
-}
+  const ul = document.createElement("ul");
+  ul.style.display = "flex";
+  ul.style.flexWrap = "wrap";
+  ul.style.listStyleType = "none";
+
+  books.forEach(book => {
+    const li = document.createElement("li");
+    const p = document.createElement("p");
+    const img = document.createElement("img");
+
+    li.style.width = "calc(25% - 51px)";
+    li.style.margin = "15px";
+    li.style.padding = "10px";
+    li.style.minWidth = "350px";
+    img.style.width = "200px";
+
+    if (book.author === "Don Norman") {
+      img.setAttribute("src", "https://media.s-bol.com/7ov383lj3Rr/800x1200.jpg");
+      li.style.backgroundColor = "red";
+    } else if (book.author === "Brian Christian") {
+      img.setAttribute("src", "https://images-na.ssl-images-amazon.com/images/I/41m1rQjm5tL._SX322_BO1,204,203,200_.jpg");
+      li.style.backgroundColor = "green";
+    } else {
+      img.setAttribute("src", "https://media.s-bol.com/34489jXEA8x/550x718.jpg");
+      li.style.backgroundColor = "#005e80";
+    }
+
+    p.textContent = `${book.title} - ${book.author}`
+    li.appendChild(p);
+    li.appendChild(img);
+    ul.appendChild(li);
+  });
+
+  return ul;
+};
 
 const books = [{
-    title: 'The Design of Everyday Things',
-    author: 'Don Norman',
-    alreadyRead: false
-  },
-  {
-    title: 'The Most Human Human',
-    author: 'Brian Christian',
-    alreadyRead: true
-  },
-  {
-    title: 'The Pragmatic Programmer',
-    author: 'Andrew Hunt',
-    alreadyRead: true
-  }
+  title: 'The Design of Everyday Things',
+  author: 'Don Norman',
+  alreadyRead: false
+},
+{
+  title: 'The Most Human Human',
+  author: 'Brian Christian',
+  alreadyRead: true
+},
+{
+  title: 'The Pragmatic Programmer',
+  author: 'Andrew Hunt',
+  alreadyRead: true
+}
 ];
-
 let ulElement = createBookList(books);
 
 document.querySelector("#bookList").appendChild(ulElement);
