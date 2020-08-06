@@ -9,3 +9,25 @@
  5. See HTML
  6. Create a new img element and set its src attribute to a picture of you.Append that element to the page.
  */
+
+const body = document.body;
+body.style.fontFamily = "Arial, sans-serif";
+
+const nickName = document.getElementById("nickname");
+const favFood = document.getElementById("fav-food");
+const homeTown = document.getElementById("hometown");
+
+nickName.textContent = " RayRay";
+favFood.textContent = " Biryani";
+homeTown.textContent = " Poyraz Ogly";
+
+const list = document.querySelectorAll("li");
+list.forEach(li => {
+  li.classList.add("list-item");
+});
+
+const img = document.createElement("img");
+const ul = document.querySelector("ul");
+img.setAttribute("src", "./assets/rezan.jpg");
+document.body.insertBefore(img, ul);
+img.style.width = "200px";
