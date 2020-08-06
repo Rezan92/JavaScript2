@@ -10,9 +10,45 @@
   4. Have the function execute when it 's loading in the browser
 
  */
+const body = document.body;
+const div = document.createElement("div");
+const h4 = document.createElement("h4");
+body.style.padding = "0"
+body.style.margin = "0"
+div.style.textAlign = "center";
+div.style.paddingTop = "50px";
+div.style.paddingBottom = "50px";
+div.style.backgroundColor = "green";
+div.style.margin = "auto";
+div.style.marginTop = "27vh";
+h4.style.fontSize = "3rem";
+div.appendChild(h4);
+body.appendChild(div);
 
 function displayCurrentTime() {
-  // your code goes in here
+  const date = new Date();
+  const hours = date.getHours();
+  let minutes = date.getMinutes();
+  let seconds = date.getSeconds();
+  let hour ;
+  let beforAfternoon ;
+  if(hours > 12){
+    hour = hours - 12;
+    beforAfternoon = "PM"
+  }else {
+     hour = hours
+    beforAfternoon = "AM"
+  }
+  minutes = addZero(minutes);
+  seconds = addZero(seconds);
+  setInterval(displayCurrentTime, 500)
+  return h4.textContent = `${hour}:${minutes}:${seconds} ${beforAfternoon}`
 }
 
-setInterval(displayCurrentTime, 1000);
+window.addEventListener("load",displayCurrentTime);
+
+function addZero(time){
+  if(time < 10) time = "0" + time;
+  else time = time;
+  return time
+}
