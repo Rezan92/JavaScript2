@@ -14,6 +14,20 @@
 
 function dayWorth(tasks, hourlyRate) {
   // put your code in here, the function does returns a euro formatted string
+  if (tasks.every(task => typeof task.duration === "number")) {
+    
+        const callBack = (task) => {
+          return (task.duration / 60) * hourlyRate;
+        };
+    
+        const income = tasks.map(callBack)
+                            .reduce((a, b) => { return a + b }, 0);
+        mondayIncome = "€" + income.toFixed(2)
+        return mondayIncome;
+    
+      } else {
+        return "The first argument should be an array of objects that contain a duration property with a number value"
+      }
 }
 
 const mondayTasks = [{
