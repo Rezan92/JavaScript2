@@ -10,11 +10,18 @@ Call the function three times. The return values should be:
 
  */
 
-function createBase( /* ???? */ ) {
+function createBase(num) {
   // Put here your logic...
+  return function(){
+   return num + 9;
+  }
 }
 
 const addSix = createBase(6);
 
+const addFifteen = createBase(15);
+const addTwentySeven = createBase(27);
 // Put here your function calls...
 console.log(addSix());
+console.log(addFifteen());
+console.log(addTwentySeven());
