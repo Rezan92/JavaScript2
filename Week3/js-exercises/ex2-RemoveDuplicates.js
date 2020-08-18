@@ -12,10 +12,18 @@ does not return anything but removes any duplicate elements from the array.
 
 
 // WRITE YOUR FUNCTION HERE
+function removeDuplicates(arr){
+ const newArray = arr.filter((a, b) => arr.indexOf(a) === b);
+ arr.splice(0, arr.length); 
+ newArray.forEach(ele => arr.push(ele));
+ return arr
+}
 
 const letters = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c', 'b'];
 
-removeDuplicates(letter);
-
+removeDuplicates(letters); //output letters = [ 'a', 'b', 'c', 'd', 'e', 'f' ]
 if (letters === ['a', 'b', 'c', 'd', 'e', 'f'])
   console.log("Hooray!")
+
+  console.log(letters === ['a', 'b', 'c', 'd', 'e', 'f'])// false, why?
+  console.log(['a', 'b', 'c', 'd', 'e', 'f'] === ['a', 'b', 'c', 'd', 'e', 'f'])// false, why?
