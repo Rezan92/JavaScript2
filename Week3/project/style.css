@@ -1,0 +1,166 @@
+:root {
+  --border-style: 1px solid #cecece;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  color: #4b4b4b;
+  background: linear-gradient(to right, #401a12, #6e1a0a);
+}
+
+.app {
+  position: relative;
+  width: 350px;
+  height: 550px;
+  margin: auto;
+  margin-top: 3rem;
+  background: white;
+  border-radius: 5px;
+}
+
+header {
+  padding: 5px;
+  border-bottom: var(--border-style);
+}
+
+header h1 {
+  margin: 5px;
+  font-size: 1.3rem;
+}
+
+.calculator-body {
+  padding: 1rem;
+}
+
+.form-group {
+  margin-top: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin: 5px 0;
+}
+
+.form-group input, select {
+  width: 100%;
+  height: 40px;
+  border-radius: 3px;
+  border: var(--border-style);
+  outline: none;
+  padding: 8px 10px;
+  font-size: 1rem;
+}
+
+select {
+  background: white;
+  color: #4b4b4b;
+}
+
+.form-group input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.bill-amount {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-items: center;
+  align-items: center;
+}
+
+.bill-amount input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.bill-amount span {
+  display: inline-block;
+  padding: 10px 12px;
+  border: var(--border-style);
+  border-right: none;
+  background: #eeeeee;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+form button, .modal-btn button{
+  display: block;
+  background: #ee4326;
+  color: white;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  margin: 1.5rem auto;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+form button:hover {
+  background: #921803;
+}
+
+.btn{
+  background: #921803;
+}
+
+.tip{
+  font-weight: lighter;
+  color: #00449f;
+  text-align: center;
+}
+
+.modal{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00000067;
+  height: 100vh;
+  width: 100vw;
+  opacity: 0;
+  transition: all .5s ease;
+}
+
+.info{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  width: 480px;
+  border-radius: 5px;
+}
+
+.info h1 {
+  margin: 0;
+  padding: 15px 20px;
+  font-size: 1.5rem;
+  border-bottom:var(--border-style);
+}
+
+.info p {
+  margin: 0;
+  padding: 20px;
+}
+
+.modal-btn {
+  padding: 20px;
+  overflow: hidden;
+}
+
+.modal-btn button{
+  background: #0595db;
+  height: 40px;
+  width: 50px;
+  padding: 5px;
+  margin:0;
+  float: right;
+}
