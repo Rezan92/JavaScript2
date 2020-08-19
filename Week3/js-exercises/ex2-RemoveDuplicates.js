@@ -21,9 +21,6 @@ function removeDuplicates(arr){
 
 const letters = ['a', 'b', 'c', 'd', 'a', 'e', 'f', 'c', 'b'];
 
-removeDuplicates(letters); //output letters = [ 'a', 'b', 'c', 'd', 'e', 'f' ]
+console.log(removeDuplicates(letters));
 if (letters === ['a', 'b', 'c', 'd', 'e', 'f'])
   console.log("Hooray!")
-
-  console.log(letters === ['a', 'b', 'c', 'd', 'e', 'f'])// false, why?
-  console.log(['a', 'b', 'c', 'd', 'e', 'f'] === ['a', 'b', 'c', 'd', 'e', 'f'])// false, why?
