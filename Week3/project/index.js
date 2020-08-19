@@ -21,7 +21,7 @@ function tipCalculator(e) {
   const numberOfPeople = parseFloat(peopleInput.value);
   const tottalTip = (((serviceQuality / 100) * billAmount) + billAmount).toFixed(2);
 
-  if (isNaN(billAmount) || isNaN(serviceQuality)) {
+  if (isNaN(billAmount) || isNaN(serviceQuality) || isNaN(numberOfPeople)) {
     addClassToSubmitBtn()
     modal.style.display = "block";
     setTimeout(() => {
@@ -34,7 +34,7 @@ function tipCalculator(e) {
       tip.innerHTML = `TIP AMOUNT<br>$ ${tottalTip}`;
     } else {
       addClassToSubmitBtn()
-      tip.innerHTML = `TIP AMOUNT<br>$ ${tottalTip / numberOfPeople}<br> each`;
+      tip.innerHTML = `TIP AMOUNT<br>$ ${(tottalTip / numberOfPeople).toFixed(2)}<br> each`;
     }
   }
 }
@@ -43,7 +43,7 @@ function closeModal() {
   modal.style.opacity = "0";
   setTimeout(() => {
     modal.style.display = "none";
-  }, 500);
+  }, 300);
 }
 
 function addClassToSubmitBtn(){
